@@ -4,40 +4,40 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 const reviewSchema = new mongoose.Schema({
 
     bookId: {
-        type : ObjectId, 
-        required : true,
-        ref : "book",
-        trim : true
+        type: ObjectId,
+        required: true,
+        ref: "book",
+        trim: true
     },
     reviewedBy: {
-        type : String, 
-        required : true,
-        default : 'Guest',
-        trim : true
+        type: String,
+        required: true,
+        default: 'Guest',
+        trim: true
     },
     reviewedAt: {
-        type : Date, 
-        required : true,
-        trim : true
+        type: Date,
+        required: true,
+        trim: true
     },
     rating: {
-        type :Number, 
-        required : true, 
-        trim : true
+        type: Number,
+        required: true,
+        trim: true
     },
     review: {
-        type :String, 
-        min : 1,
-        max : 5,
-        trim : true
+        type: String,
+        min: 1,
+        max: 5,
+        trim: true
     },
     isDeleted: {
-        type :Boolean, 
+        type: Boolean,
         default: false,
-        trim : true
+        trim: true
     },
 
 
-},{timestamps:true})
+}, { timestamps: true })
 
-module.exports = mongoose.model("review",reviewSchema)
+module.exports = mongoose.model("review", reviewSchema)
